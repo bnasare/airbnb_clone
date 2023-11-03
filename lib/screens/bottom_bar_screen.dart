@@ -34,10 +34,11 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       bottomNavigationBar: BottomNavigationBar(
         elevation: 20,
         unselectedItemColor:
-            Theme.of(context).colorScheme.primary.withOpacity(0.5),
+            Theme.of(context).colorScheme.primary.withOpacity(0.4),
         selectedItemColor: Theme.of(context).colorScheme.secondary,
         backgroundColor: Colors.white,
         showSelectedLabels: true,
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
         showUnselectedLabels: true,
         unselectedFontSize: 14,
         type: BottomNavigationBarType.fixed,

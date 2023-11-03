@@ -1,3 +1,4 @@
+import 'package:air_bnb_clone_/screens/home/screens/discovery_screen.dart';
 import 'package:air_bnb_clone_/screens/home/widgets/location_search_box_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -14,6 +15,17 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 1;
 
+  List<Map<String, dynamic>> menuItems = [
+    {'icon': IconlyLight.discovery, 'label': 'Discovery'},
+    {'icon': IconlyLight.work, 'label': 'Work'},
+    {'icon': IconlyLight.activity, 'label': 'Activity'},
+    {'icon': IconlyLight.chart, 'label': 'Chart'},
+    {'icon': IconlyLight.home, 'label': 'Home'},
+    {'icon': IconlyLight.graph, 'label': 'Graph'},
+    {'icon': IconlyLight.filter2, 'label': 'Filter'},
+    {'icon': IconlyLight.message, 'label': 'Message'},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,35 +40,28 @@ class _HomeScreenState extends State<HomeScreen> {
               const LocationSearchBox(),
               SizedBox(
                 height: 100,
-                child: ListView(
+                child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  children: [
-                    CustomIconButton(
-                      index: 1,
-                      selectedIndex: _selectedIndex,
-                      onPressed: () {
-                        setState(() {
-                          _selectedIndex = 1;
-                        });
-                      },
-                      icon: IconlyLight.discovery,
-                      label: 'Rooms',
-                    ),
-                    const SizedBox(width: 30),
-                    CustomIconButton(
-                      index: 2,
-                      selectedIndex: _selectedIndex,
-                      onPressed: () {
-                        setState(() {
-                          _selectedIndex = 2;
-                        });
-                      },
-                      icon: IconlyLight.work,
-                      label: 'Ghana',
-                    ),
-                    // Add more CustomIconButton widgets as needed...
-                  ],
+                  itemCount: menuItems.length,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      children: [
+                        CustomIconButton(
+                          index: index + 1,
+                          selectedIndex: _selectedIndex,
+                          onPressed: () {
+                            setState(() {
+                              _selectedIndex = index + 1;
+                            });
+                          },
+                          icon: menuItems[index]['icon'],
+                          label: menuItems[index]['label'],
+                        ),
+                      ],
+                    );
+                  },
+                  separatorBuilder: (BuildContext context, int index) =>
+                      const SizedBox(width: 40),
                 ),
               )
             ],
@@ -66,20 +71,14 @@ class _HomeScreenState extends State<HomeScreen> {
       body: IndexedStack(
         index: _selectedIndex,
         children: const <Widget>[
-          Center(child: Text('No icon selected')),
-          Column(
-            children: <Widget>[
-              Text('First icon selected'),
-              // Add more widgets as needed...
-            ],
-          ),
-          Column(
-            children: <Widget>[
-              Text('Second icon selected'),
-              // Add more widgets as needed...
-            ],
-          ),
-          // Add more widget lists as needed...
+          DiscoveryScreen(),
+          DiscoveryScreen(),
+          DiscoveryScreen(),
+          DiscoveryScreen(),
+          DiscoveryScreen(),
+          DiscoveryScreen(),
+          DiscoveryScreen(),
+          DiscoveryScreen(),
         ],
       ),
     );
