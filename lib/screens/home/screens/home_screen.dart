@@ -26,7 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const LocationSearchBox(),
-              const SizedBox(height: 0),
               SizedBox(
                 height: 100,
                 child: ListView(
@@ -42,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                       },
                       icon: IconlyLight.discovery,
-                      label: 'Discovery',
+                      label: 'Rooms',
                     ),
                     const SizedBox(width: 30),
                     CustomIconButton(
@@ -54,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         });
                       },
                       icon: IconlyLight.work,
-                      label: 'Work',
+                      label: 'Ghana',
                     ),
                     // Add more CustomIconButton widgets as needed...
                   ],

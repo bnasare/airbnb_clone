@@ -18,31 +18,35 @@ class CustomIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        GestureDetector(
-          onTap: onPressed,
-          child: Icon(
+    return GestureDetector(
+      onTap: onPressed,
+      child: Column(
+        children: [
+          Icon(
             icon,
             color: Colors.black,
             size: 35,
           ),
-        ),
-        Text(
-          label,
-          style: const TextStyle(
-            color: Colors.black,
-            fontSize: 12,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15.0, top: 10),
+            child: Text(
+              label,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 12,
+              ),
+            ),
           ),
-        ),
-        if (selectedIndex == index)
-          Container(
-            height: 3,
-            width: 35,
-            color: Colors.black,
-          ),
-      ],
+          if (selectedIndex == index)
+            Flexible(
+              child: Container(
+                height: 3,
+                width: 40,
+                color: Colors.black,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
