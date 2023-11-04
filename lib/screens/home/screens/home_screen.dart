@@ -38,7 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const LocationSearchBox(),
-              SizedBox(
+              Container(
+                margin: const EdgeInsets.only(left: 5, right: 5),
                 height: 100,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,

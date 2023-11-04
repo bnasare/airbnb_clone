@@ -7,7 +7,9 @@ class LocationSearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 40, bottom: 33),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      height: 63,
+      margin: const EdgeInsets.only(top: 40, bottom: 33, left: 5, right: 5),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
@@ -20,47 +22,65 @@ class LocationSearchBox extends StatelessWidget {
           ),
         ],
       ),
-      child: TextField(
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
-          hintText: 'Where to?',
-          hintStyle: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.w500,
-            color: Theme.of(context).colorScheme.primary,
+      child: Row(
+        children: [
+          const Icon(
+            IconlyLight.search,
+            color: Colors.black,
           ),
-          prefixIcon: const Padding(
-            padding: EdgeInsets.only(
-              left: 18.0,
-              right: 15,
-              bottom: 4,
-            ),
-            child: Icon(
-              IconlyLight.search,
-              color: Colors.black,
-            ),
+          const SizedBox(width: 16),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Where to?',
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Theme.of(context).colorScheme.primary,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 0),
+              FittedBox(
+                child: Text(
+                  'Anywhere . Any week . Add guests',
+                  maxLines: 1,
+                  style: TextStyle(
+                    letterSpacing: -1.2,
+                    fontSize: 15,
+                    color: Theme.of(context).colorScheme.tertiary,
+                  ),
+                ),
+              ),
+            ],
           ),
-          suffixIcon: Container(
-            margin: const EdgeInsets.only(top: 5, bottom: 5, right: 10),
+          const Spacer(),
+          Container(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
                 color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
               ),
             ),
+            padding: const EdgeInsets.all(8),
             child: const Icon(
               IconlyLight.filter,
               color: Colors.black,
             ),
           ),
-          border: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: BorderRadius.circular(30),
-          ),
-          contentPadding: const EdgeInsets.symmetric(vertical: 20),
-        ),
-        style: const TextStyle(fontSize: 17, color: Colors.black),
+          // IconButton.outlined(
+          //   style: ButtonStyle(
+          //     side: MaterialStateProperty.all(
+          //         const BorderSide(color: Colors.black)),
+          //   ),
+          //   onPressed: () {},
+          //   icon: const Icon(
+          //     IconlyLight.filter,
+          //     color: Colors.black,
+          //   ),
+          // ),
+        ],
       ),
     );
   }
