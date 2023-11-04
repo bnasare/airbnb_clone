@@ -30,10 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(200),
+        preferredSize: const Size.fromHeight(165),
         child: AppBar(
           elevation: 1,
-          toolbarHeight: 200,
+          toolbarHeight: 165,
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -81,6 +81,25 @@ class _HomeScreenState extends State<HomeScreen> {
           DiscoveryScreen(),
           DiscoveryScreen(),
         ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        onPressed: () {},
+        label: const Row(
+          children: [
+            Icon(
+              Icons.map_outlined,
+            ),
+            SizedBox(
+              width: 7,
+            ),
+            Text(
+              'Map',
+              style: TextStyle(fontWeight: FontWeight.w600),
+            )
+          ],
+        ),
       ),
     );
   }

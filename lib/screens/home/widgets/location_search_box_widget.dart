@@ -8,8 +8,8 @@ class LocationSearchBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12),
-      height: 63,
-      margin: const EdgeInsets.only(top: 40, bottom: 33, left: 5, right: 5),
+      height: 60,
+      margin: const EdgeInsets.only(top: 30, bottom: 21, left: 5, right: 5),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
@@ -41,7 +41,6 @@ class LocationSearchBox extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 0),
               FittedBox(
                 child: Text(
                   'Anywhere . Any week . Add guests',

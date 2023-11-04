@@ -1,5 +1,6 @@
 import 'package:air_bnb_clone_/models/product_model.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
@@ -18,12 +19,12 @@ class ProductCard extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               SizedBox(
-                height: 300,
+                height: 330,
                 child: Swiper(
                   itemBuilder: (BuildContext context, int index) {
-                    return Image.network(
-                      product.imageUrls[index],
-                      fit: BoxFit.fill,
+                    return FancyShimmerImage(
+                      imageUrl: product.imageUrls[index],
+                      boxFit: BoxFit.cover,
                     );
                   },
                   autoplay: false,
@@ -75,7 +76,7 @@ class ProductCard extends StatelessWidget {
               const SizedBox(width: 5),
               Text(product.rating.toString(),
                   style: const TextStyle(
-                      fontSize: 19, fontWeight: FontWeight.w500)),
+                      fontSize: 17, fontWeight: FontWeight.w500)),
             ],
           ),
         ),
@@ -84,7 +85,7 @@ class ProductCard extends StatelessWidget {
           style: TextStyle(
             letterSpacing: -1,
             color: Theme.of(context).colorScheme.tertiary,
-            fontSize: 19,
+            fontSize: 17,
           ),
         ),
         Padding(
@@ -94,7 +95,7 @@ class ProductCard extends StatelessWidget {
             style: TextStyle(
               letterSpacing: -1,
               color: Theme.of(context).colorScheme.tertiary,
-              fontSize: 19,
+              fontSize: 17,
             ),
           ),
         ),
@@ -103,7 +104,7 @@ class ProductCard extends StatelessWidget {
           style: TextStyle(
             letterSpacing: -1,
             color: Theme.of(context).colorScheme.primary,
-            fontSize: 19,
+            fontSize: 18,
           ),
         ),
       ],

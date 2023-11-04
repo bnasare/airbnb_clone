@@ -53,7 +53,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
             color: widget.selectedIndex == widget.index
                 ? color.primary
                 : color.primary.withOpacity(0.4),
-            size: 35,
+            size: 30,
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 15.0, top: 10),
