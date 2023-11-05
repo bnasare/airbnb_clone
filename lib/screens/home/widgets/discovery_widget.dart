@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 import '../../../models/product_model.dart';
 
-class DiscoveryScreen extends StatefulWidget {
-  const DiscoveryScreen({super.key});
+class DeliveryWidget extends StatefulWidget {
+  const DeliveryWidget({super.key});
 
   @override
-  State<DiscoveryScreen> createState() => _DiscoveryScreenState();
+  State<DeliveryWidget> createState() => _DeliveryWidgetState();
 }
 
-class _DiscoveryScreenState extends State<DiscoveryScreen> {
+class _DeliveryWidgetState extends State<DeliveryWidget> {
   bool _isSwitched = false;
   @override
   Widget build(BuildContext context) {

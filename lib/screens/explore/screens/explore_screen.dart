@@ -1,6 +1,6 @@
-import 'package:air_bnb_clone_/screens/explore/screens/stays_screen.dart';
 import 'package:air_bnb_clone_/screens/explore/widgets/category_tab.dart';
 import 'package:air_bnb_clone_/screens/explore/widgets/custom_bottom_appbar_buttons.dart';
+import 'package:air_bnb_clone_/screens/explore/widgets/stays_widget.dart';
 import 'package:flutter/material.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -80,8 +80,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
       ),
       body: ListView(
         children: [
-          Visibility(visible: _selectedIndex == 1, child: const StaysScreen()),
-          Visibility(visible: _selectedIndex == 2, child: const StaysScreen()),
+          Visibility(visible: _selectedIndex == 1, child: const StaysWidget()),
+          Visibility(visible: _selectedIndex == 2, child: const StaysWidget()),
         ],
       ),
       bottomNavigationBar: CustomBottomAppBarButtons(

@@ -3,16 +3,16 @@ import 'package:air_bnb_clone_/screens/explore/widgets/destination_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/custom_selection_container.dart';
+import 'custom_selection_container.dart';
 
-class StaysScreen extends StatefulWidget {
-  const StaysScreen({super.key});
+class StaysWidget extends StatefulWidget {
+  const StaysWidget({super.key});
 
   @override
-  State<StaysScreen> createState() => _StaysScreenState();
+  State<StaysWidget> createState() => _StaysWidgetState();
 }
 
-class _StaysScreenState extends State<StaysScreen> {
+class _StaysWidgetState extends State<StaysWidget> {
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;

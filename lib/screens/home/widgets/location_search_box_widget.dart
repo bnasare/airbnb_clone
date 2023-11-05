@@ -5,8 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-class LocationSearchBox extends StatelessWidget {
-  const LocationSearchBox({super.key});
+class SearchBarWithFilter extends StatelessWidget {
+  const SearchBarWithFilter({super.key});
 
   @override
   Widget build(BuildContext context) {

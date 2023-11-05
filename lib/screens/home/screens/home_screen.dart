@@ -1,4 +1,4 @@
-import 'package:air_bnb_clone_/screens/home/screens/discovery_screen.dart';
+import 'package:air_bnb_clone_/screens/home/widgets/discovery_widget.dart';
 import 'package:air_bnb_clone_/screens/home/widgets/location_search_box_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const LocationSearchBox(),
+              const SearchBarWithFilter(),
               Container(
                 margin: const EdgeInsets.only(left: 5, right: 5),
                 height: 100,
@@ -72,14 +72,14 @@ class _HomeScreenState extends State<HomeScreen> {
       body: IndexedStack(
         index: _selectedIndex,
         children: const <Widget>[
-          DiscoveryScreen(),
-          DiscoveryScreen(),
-          DiscoveryScreen(),
-          DiscoveryScreen(),
-          DiscoveryScreen(),
-          DiscoveryScreen(),
-          DiscoveryScreen(),
-          DiscoveryScreen(),
+          DeliveryWidget(),
+          DeliveryWidget(),
+          DeliveryWidget(),
+          DeliveryWidget(),
+          DeliveryWidget(),
+          DeliveryWidget(),
+          DeliveryWidget(),
+          DeliveryWidget(),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
