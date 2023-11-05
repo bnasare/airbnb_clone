@@ -32,7 +32,7 @@ class _ExploreTabControllerState extends State<ExploreTabController> {
     final textPainter = TextPainter(
       text: TextSpan(
         text: widget.label,
-        style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
       ),
       maxLines: 1,
       textDirection: TextDirection.ltr,
@@ -58,7 +58,7 @@ class _ExploreTabControllerState extends State<ExploreTabController> {
                       ? color.primary
                       : color.primary.withOpacity(0.4),
                   fontWeight: FontWeight.w600,
-                  fontSize: 17,
+                  fontSize: 18,
                 ),
               ),
             ),

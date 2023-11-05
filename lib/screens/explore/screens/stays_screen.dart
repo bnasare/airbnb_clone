@@ -14,14 +14,15 @@ class _StaysScreenState extends State<StaysScreen> {
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
+      padding: const EdgeInsets.fromLTRB(15, 20, 15, 10),
       child: Column(
         children: [
           Container(
+            padding: const EdgeInsets.all(25),
             width: double.infinity,
             height: 350,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: color.background.withOpacity(0.9),
               borderRadius: BorderRadius.circular(30),
               boxShadow: [
                 BoxShadow(
@@ -30,6 +31,15 @@ class _StaysScreenState extends State<StaysScreen> {
                   blurRadius: 7,
                   offset: const Offset(0, 3),
                 ),
+              ],
+            ),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Where to?',
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
+                )
               ],
             ),
           ),

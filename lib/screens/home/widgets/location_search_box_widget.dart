@@ -34,7 +34,7 @@ class LocationSearchBox extends StatelessWidget {
           const SizedBox(width: 16),
           GestureDetector(
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const ExploreScreen()));

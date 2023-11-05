@@ -17,7 +17,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
     return Scaffold(
-      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -42,10 +41,34 @@ class _ExploreScreenState extends State<ExploreScreen> {
         ),
         leading: Padding(
           padding: const EdgeInsets.only(left: 20),
-          child: CircleAvatar(
-            backgroundColor: color.background,
+          // child: IconButton.filled(
+          //   style: ButtonStyle(
+          //     backgroundColor: MaterialStateProperty.all(
+          //       color.background,
+          //     ),
+          //   ),
+          //   onPressed: () {},
+          //   icon: Icon(
+          //     Icons.menu,
+          //     color: color.primary,
+          //   ),
+          // ),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color.background,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  blurRadius: 5,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.canPop(context) ? Navigator.pop(context) : null;
+              },
               iconSize: 20,
               icon: Icon(
                 Icons.close,

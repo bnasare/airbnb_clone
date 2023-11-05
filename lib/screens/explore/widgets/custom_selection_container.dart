@@ -16,16 +16,15 @@ class CustomSelectionContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 25),
-      margin: const EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 25),
       width: double.infinity,
       height: 85,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.background.withOpacity(0.9),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 2,
             blurRadius: 7,
             offset: const Offset(0, 2),
           ),
