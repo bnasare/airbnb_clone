@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:air_bnb_clone_/screens/explore/screens/explore_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
@@ -10,7 +11,7 @@ class LocationSearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 12, right: 5),
+      padding: const EdgeInsets.only(left: 15, right: 5),
       height: 60,
       margin: const EdgeInsets.only(top: 30, bottom: 21, left: 5, right: 5),
       decoration: BoxDecoration(
@@ -28,7 +29,7 @@ class LocationSearchBox extends StatelessWidget {
       child: Row(
         children: [
           const Icon(
-            IconlyLight.search,
+            CupertinoIcons.search,
             color: Colors.black,
           ),
           const SizedBox(width: 16),

@@ -20,7 +20,7 @@ class CustomSelectionContainer extends StatelessWidget {
       width: double.infinity,
       height: 85,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.background.withOpacity(0.9),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(

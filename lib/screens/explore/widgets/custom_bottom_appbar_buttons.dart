@@ -14,9 +14,8 @@ class CustomBottomAppBarButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme;
     return BottomAppBar(
-      height: 80,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -29,7 +28,7 @@ class CustomBottomAppBarButtons extends StatelessWidget {
               child: Text(
                 'Clear all',
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 20,
                   fontWeight: FontWeight.w600,
                   decoration: TextDecoration.underline,
                   decorationColor:
@@ -64,7 +63,7 @@ class CustomBottomAppBarButtons extends StatelessWidget {
                     'Search',
                     style: TextStyle(
                       color: color.background,
-                      fontSize: 19,
+                      fontSize: 22,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
