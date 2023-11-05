@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:air_bnb_clone_/screens/explore/screens/explore_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
@@ -7,7 +10,7 @@ class LocationSearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      padding: const EdgeInsets.only(left: 12, right: 5),
       height: 60,
       margin: const EdgeInsets.only(top: 30, bottom: 21, left: 5, right: 5),
       decoration: BoxDecoration(
@@ -29,44 +32,57 @@ class LocationSearchBox extends StatelessWidget {
             color: Colors.black,
           ),
           const SizedBox(width: 16),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Where to?',
-                style: TextStyle(
-                  fontSize: 17,
-                  color: Theme.of(context).colorScheme.primary,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              FittedBox(
-                child: Text(
-                  'Anywhere . Any week . Add guests',
-                  maxLines: 1,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ExploreScreen()));
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Where to?',
                   style: TextStyle(
-                    letterSpacing: -1.2,
-                    fontSize: 15,
-                    color: Theme.of(context).colorScheme.tertiary,
+                    fontSize: 17,
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-              ),
-            ],
+                FittedBox(
+                  child: Text(
+                    'Anywhere . Any week . Add guests',
+                    maxLines: 1,
+                    style: TextStyle(
+                      letterSpacing: -1.2,
+                      fontSize: 15,
+                      color: Theme.of(context).colorScheme.tertiary,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
           const Spacer(),
           Container(
+            margin: const EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
                 color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
               ),
             ),
-            padding: const EdgeInsets.all(8),
-            child: const Icon(
-              IconlyLight.filter,
-              color: Colors.black,
-            ),
+            child: IconButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  log('ei');
+                },
+                icon: const Icon(
+                  IconlyLight.filter,
+                  color: Colors.black,
+                )),
           ),
           // IconButton.outlined(
           //   style: ButtonStyle(

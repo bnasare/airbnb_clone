@@ -3,7 +3,7 @@ import 'package:air_bnb_clone_/screens/home/widgets/location_search_box_widget.d
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-import '../widgets/custom_icon_button_widget.dart';
+import '../widgets/category_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 1;
 
-  List<Map<String, dynamic>> menuItems = [
+  List<Map<String, dynamic>> categoryItems = [
     {'icon': IconlyLight.discovery, 'label': 'Discovery'},
     {'icon': IconlyLight.work, 'label': 'Work'},
     {'icon': IconlyLight.activity, 'label': 'Activity'},
@@ -43,11 +43,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 100,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: menuItems.length,
+                  itemCount: categoryItems.length,
                   itemBuilder: (context, index) {
                     return Row(
                       children: [
-                        CustomIconButton(
+                        CategoryTab(
                           index: index + 1,
                           selectedIndex: _selectedIndex,
                           onPressed: () {
@@ -55,8 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               _selectedIndex = index + 1;
                             });
                           },
-                          icon: menuItems[index]['icon'],
-                          label: menuItems[index]['label'],
+                          icon: categoryItems[index]['icon'],
+                          label: categoryItems[index]['label'],
                         ),
                       ],
                     );

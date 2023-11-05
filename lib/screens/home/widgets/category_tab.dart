@@ -1,13 +1,14 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-class CustomIconButton extends StatefulWidget {
+class CategoryTab extends StatefulWidget {
   final IconData icon;
   final String label;
   final int index;
   final int selectedIndex;
   final VoidCallback onPressed;
 
-  const CustomIconButton({
+  const CategoryTab({
     Key? key,
     required this.icon,
     required this.label,
@@ -17,10 +18,10 @@ class CustomIconButton extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CustomIconButton> createState() => _CustomIconButtonState();
+  State<CategoryTab> createState() => _CategoryTabState();
 }
 
-class _CustomIconButtonState extends State<CustomIconButton> {
+class _CategoryTabState extends State<CategoryTab> {
   late double _textWidth;
 
   @override
@@ -33,7 +34,10 @@ class _CustomIconButtonState extends State<CustomIconButton> {
     final textPainter = TextPainter(
       text: TextSpan(
         text: widget.label,
-        style: const TextStyle(fontSize: 14),
+        style: const TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+        ),
       ),
       maxLines: 1,
       textDirection: TextDirection.ltr,
